@@ -36,7 +36,9 @@ def search():
 def profile(username):
     # escape output
     safe_username = escape(username)
-    return f"<h1>Profil: {safe_username}</h1>"
+    from flask import render_template
+
+    return render_template('profile.html', username=safe_username)
 
 
 @app.route("/login", methods=["POST"])
