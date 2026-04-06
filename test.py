@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from markupsafe import escape
 import sqlite3
 import os
@@ -15,7 +15,7 @@ def get_db():
 
 @app.route("/")
 def index():
-    return "Flask app de test OK"
+    return render_template('index.html')
 
 
 @app.route("/search")
