@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from markupsafe import escape
 import sqlite3
 import os
@@ -36,8 +36,6 @@ def search():
 def profile(username):
     # escape output
     safe_username = escape(username)
-    from flask import render_template
-
     return render_template('profile.html', username=safe_username)
 
 
